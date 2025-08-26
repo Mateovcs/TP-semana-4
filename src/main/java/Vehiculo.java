@@ -1,32 +1,71 @@
-// import static org.junit.jupiter.api.Assertions.assertEquals;
-
-// import org.junit.jupiter.api.Test;
 
 public class Vehiculo {
-  public static void main(String[] args) {
-    // Crear una instancia de Vehiculo
-    Vehiculo vehiculo1 = new Vehiculo("Toyota", 80.5);
+    // Atributos privados
+    private String marca;
+    private double velocidad;
     
-    // Mostrar información usando mostrarInfo()
-    vehiculo1.mostrarInfo();
+    // Constructor con parámetros
+    public Vehiculo(String marca, double velocidad) {
+        this.marca = marca;
+        this.velocidad = velocidad;
+    }
     
-    // Mostrar información usando toString()
-    System.out.println(vehiculo1.toString());
+    // Getters
+    public String getMarca() {
+        return marca;
+    }
     
-    // Llamar al método mover()
-    vehiculo1.mover();
+    public double getVelocidad() {
+        return velocidad;
+    }
     
-    // Usar getters
-    System.out.println("Marca obtenida con getter: " + vehiculo1.getMarca());
-    System.out.println("Velocidad obtenida con getter: " + vehiculo1.getVelocidad());
+    // Setters
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
     
-    // Usar setters
-    vehiculo1.setMarca("Honda");
-    vehiculo1.setVelocidad(95.0);
+    public void setVelocidad(double velocidad) {
+        this.velocidad = velocidad;
+    }
     
-    System.out.println("Después de usar setters:");
-    vehiculo1.mostrarInfo();
-  }
-
- 
+    // Método mostrarInfo()
+    public void mostrarInfo() {
+        System.out.println("Marca: " + marca + ", Velocidad: " + velocidad + " km/h");
+    }
+    
+    // Sobreescribir toString()
+    @Override
+    public String toString() {
+        return "Vehiculo{marca='" + marca + "', velocidad=" + velocidad + " km/h}";
+    }
+    
+    // Método mover()
+    public void mover() {
+        System.out.println("El vehículo se está moviendo");
+    }
+    
+    public static void main(String[] args) {
+        // Crear una instancia de Vehiculo
+        Vehiculo vehiculo1 = new Vehiculo("Toyota", 80.5);
+        
+        // Mostrar información usando mostrarInfo()
+        vehiculo1.mostrarInfo();
+        
+        // Mostrar información usando toString()
+        System.out.println(vehiculo1.toString());
+        
+        // Llamar al método mover()
+        vehiculo1.mover();
+        
+        // Usar getters
+        System.out.println("Marca obtenida con getter: " + vehiculo1.getMarca());
+        System.out.println("Velocidad obtenida con getter: " + vehiculo1.getVelocidad());
+        
+        // Usar setters
+        vehiculo1.setMarca("Honda");
+        vehiculo1.setVelocidad(95.0);
+        
+        System.out.println("Después de usar setters:");
+        vehiculo1.mostrarInfo();
+    }
 }
