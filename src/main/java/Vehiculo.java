@@ -1,47 +1,32 @@
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+
+// import org.junit.jupiter.api.Test;
 
 public class Vehiculo {
-    // Atributos privados
-    private String marca;
-    private double velocidad;
+  public static void main(String[] args) {
+    // Crear una instancia de Vehiculo
+    Vehiculo vehiculo1 = new Vehiculo("Toyota", 80.5);
     
-    // Constructor con parámetros
-    public Vehiculo(String marca, double velocidad) {
-        this.marca = marca;
-        this.velocidad = velocidad;
-    }
+    // Mostrar información usando mostrarInfo()
+    vehiculo1.mostrarInfo();
     
-    // Getters
-    public String getMarca() {
-        return marca;
-    }
+    // Mostrar información usando toString()
+    System.out.println(vehiculo1.toString());
     
-    public double getVelocidad() {
-        return velocidad;
-    }
+    // Llamar al método mover()
+    vehiculo1.mover();
     
-    // Setters
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+    // Usar getters
+    System.out.println("Marca obtenida con getter: " + vehiculo1.getMarca());
+    System.out.println("Velocidad obtenida con getter: " + vehiculo1.getVelocidad());
     
-    public void setVelocidad(double velocidad) {
-        this.velocidad = velocidad;
-    }
+    // Usar setters
+    vehiculo1.setMarca("Honda");
+    vehiculo1.setVelocidad(95.0);
     
-    // Método mostrarInfo()
-    public void mostrarInfo() {
-        System.out.println("Marca: " + marca);
-        System.out.println("Velocidad: " + velocidad + " km/h");
-    }
-    
-    // Sobreescribir toString()
-    @Override
-    public String toString() {
-        return "Vehiculo{marca='" + marca + "', velocidad=" + velocidad + " km/h}";
-    }
-    
-    // Método mover()
-    public void mover() {
-        System.out.println("El vehículo se está moviendo");
-    }
+    System.out.println("Después de usar setters:");
+    vehiculo1.mostrarInfo();
+  }
+
+ 
 }
